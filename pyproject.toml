@@ -1,0 +1,17 @@
+[project]
+name = "project-chimera"
+version = "0.1.0"
+description = "Autonomous Influencer Network"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "mcp>=1.0.0",                  # Model Context Protocol SDK [cite: 176]
+    "pydantic-ai>=0.0.1",          # For strict schema definitions [cite: 176]
+    "redis>=5.0.0",                # For Episodic Cache and Task Queuing [cite: 89, 176]
+    "weaviate-client>=4.0.0",      # Semantic Memory / Vector Database [cite: 86, 176]
+    "coinbase-agentkit>=0.1.0",    # Agentic Commerce / Wallet Management [cite: 299]
+    "pydantic>=2.0.0",             # Data validation and settings [cite: 174]
+    "httpx>=0.25.0",               # Async HTTP client for API interactions
+    "sqlalchemy[asyncio]>=2.0.0",  # Added for Relational Data
+    "asyncpg>=0.29.0",             # PostgreSQL driver
+]
