@@ -1,6 +1,3 @@
-import pytest
-
-
 def test_trend_data_structure():
     """
     Asserts that the trend data structure matches the API contract 
@@ -25,7 +22,6 @@ def test_trend_data_structure():
         assert trend["relevance_score"] >= 0.0 and trend["relevance_score"] <= 1.0
         assert trend["source_url"].startswith("http")
 
-@pytest.mark.skip(reason="Temporarily skipped for CI validation; enable once skill is implemented.")
 def test_trend_analyzer_interface_failure():
     """
     This test is designed to FAIL. 
