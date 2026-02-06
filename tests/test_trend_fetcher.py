@@ -1,5 +1,3 @@
-import pytest
-
 def test_trend_data_structure():
     """
     Asserts that the trend data structure matches the API contract 

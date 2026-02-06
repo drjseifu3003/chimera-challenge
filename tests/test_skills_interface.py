@@ -1,5 +1,3 @@
-import pytest
-
 def test_wallet_manager_contract():
     """
     Ensures the wallet manager accepts correct parameters for Coinbase AgentKit.
