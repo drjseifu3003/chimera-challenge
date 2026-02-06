@@ -8,6 +8,7 @@ WORKDIR /app
 
 # Install exact dependencies from lockfile
 COPY pyproject.toml uv.lock /app/
+RUN apt-get update && apt-get install -y build-essential
 RUN uv sync --frozen
 
 # Copy project files
