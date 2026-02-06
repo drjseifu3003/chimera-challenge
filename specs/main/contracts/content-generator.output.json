@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ContentGeneratorOutput",
+  "type": "object",
+  "required": ["content_id", "format", "content_url"],
+  "properties": {
+    "content_id": {"type": "string"},
+    "format": {"type": "string", "enum": ["video", "image", "text"]},
+    "content_url": {"type": "string", "format": "uri"},
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "title": {"type": "string"},
+        "caption": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

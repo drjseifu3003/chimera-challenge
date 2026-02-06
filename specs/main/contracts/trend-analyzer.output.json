@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TrendAnalyzerOutput",
+  "type": "object",
+  "required": ["trends"],
+  "properties": {
+    "trends": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["topic", "relevance_score", "source_url"],
+        "properties": {
+          "topic": {"type": "string"},
+          "relevance_score": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+          "source_url": {"type": "string", "format": "uri"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

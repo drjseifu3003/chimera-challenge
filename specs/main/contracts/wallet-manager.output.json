@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WalletManagerOutput",
+  "type": "object",
+  "required": ["action", "status", "result"],
+  "properties": {
+    "action": {"type": "string", "enum": ["transfer", "balance", "check_tx"]},
+    "status": {"type": "string", "enum": ["success", "failed"]},
+    "result": {
+      "type": "object",
+      "properties": {
+        "transaction_id": {"type": "string"},
+        "balance": {"type": "number"},
+        "currency": {"type": "string"},
+        "confirmation_status": {"type": "string"},
+        "confirmations": {"type": "integer", "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "message": {"type": "string"}
+  },
+  "additionalProperties": false
+}

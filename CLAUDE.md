@@ -6,10 +6,10 @@ Project Chimera is an autonomous influencer system using a Hierarchical Swarm pa
 
 ## The Prime Directive
 - **Spec First**: NEVER generate code or design without first consulting the `specs/` directory. The specification is the absolute source of truth.
-- **Data Model**: All entities, relationships, and validation rules are defined in `specs/data-model.md`.
-- **Research**: Design decisions and rationale are documented in `specs/research.md`.
-- **API & Contracts**: All API and integration details are in `specs/contracts/openapi.yaml`.
-- **Quickstart**: Setup and onboarding are in `specs/quickstart.md`.
+- **Data Model**: All entities, relationships, and validation rules are defined in `specs/main/data-model.md`.
+- **Research**: Design decisions and rationale are documented in `specs/main/research.md`.
+- **Contracts**: Skill output contracts are in `specs/main/contracts/`.
+- **Quickstart**: Setup and onboarding are in `specs/main/quickstart.md`.
 - **All external social and data interactions MUST be decoupled via MCP.**
 
 ## Traceability & Governance
@@ -18,7 +18,7 @@ Project Chimera is an autonomous influencer system using a Hierarchical Swarm pa
 - **Economic Safety**: Always verify budget constraints and wallet logic against the economic agency rules in the data model and research specs.
 
 ## Specification Files
-- `specs/data-model.md`: Entity and relationship definitions
-- `specs/research.md`: Research and design rationale
-- `specs/contracts/openapi.yaml`: API and integration contracts
-- `specs/quickstart.md`: Setup and onboarding guide
+- `specs/main/data-model.md`: Entity and relationship definitions
+- `specs/main/research.md`: Research and design rationale
+- `specs/main/contracts/`: Skill output contracts (JSON schema)
+- `specs/main/quickstart.md`: Setup and onboarding guide
