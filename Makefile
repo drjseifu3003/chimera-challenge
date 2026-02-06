@@ -1,4 +1,4 @@
-.PHONY: setup test clean spec-check dev-setup check
+.PHONY: setup test clean spec-check dev-setup check lint secure all
 
 IMAGE := chimera-governor
 
@@ -25,3 +25,14 @@ dev-setup:
 # Run tests locally via uv
 check:
 	uv run pytest
+
+# Linting (code quality)
+lint:
+	uv run ruff check .
+
+# Security checks (static analysis)
+secure:
+	uv run bandit -r src/
+
+# Run lint, security, and tests in sequence
+all: lint secure test

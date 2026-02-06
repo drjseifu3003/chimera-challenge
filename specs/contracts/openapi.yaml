@@ -1,0 +1,115 @@
+openapi: 3.0.3
+info:
+  title: Project Chimera Agent API
+  version: 1.0.0
+  description: API contract for agent orchestration, task management, and review in Project Chimera.
+servers:
+  - url: /api
+paths:
+  /agents:
+    get:
+      summary: List all agents
+      responses:
+        '200':
+          description: List of agents
+    post:
+      summary: Create a new agent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Agent'
+      responses:
+        '201':
+          description: Agent created
+  /agents/{agentId}:
+    get:
+      summary: Get agent by ID
+      parameters:
+        - in: path
+          name: agentId
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Agent details
+  /tasks:
+    post:
+      summary: Create a new task
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        '201':
+          description: Task created
+  /tasks/{taskId}/review:
+    post:
+      summary: Submit a review for a task
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Review'
+      responses:
+        '201':
+          description: Review submitted
+components:
+  schemas:
+    Agent:
+      type: object
+      properties:
+        id:
+          type: string
+        role:
+          type: string
+        wallet_address:
+          type: string
+        status:
+          type: string
+        confidence_score:
+          type: number
+        assigned_tasks:
+          type: array
+          items:
+            type: string
+    Task:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        status:
+          type: string
+        agent_id:
+          type: string
+        input_data:
+          type: object
+        output_data:
+          type: object
+        confidence_score:
+          type: number
+        requires_review:
+          type: boolean
+    Review:
+      type: object
+      properties:
+        id:
+          type: string
+        task_id:
+          type: string
+        reviewer_id:
+          type: string
+        status:
+          type: string
+        comments:
+          type: string
+        timestamp:
+          type: string
+          format: date-time

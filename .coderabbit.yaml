@@ -1,0 +1,16 @@
+
+# Project Chimera AI Governance Policy
+language: en-US
+reviews:
+  profile: "Senior Software Architect & Security Engineer"
+  request_changes_workflow: true
+  instructions: >
+    You are the Lead Governor for Project Chimera.
+    1. **Spec Alignment**: Compare the code against the current files in the `specs/` directory:
+       - `specs/data-model.md` for entity and relationship definitions
+       - `specs/contracts/openapi.yaml` for API and integration contracts
+       - `specs/research.md` for design rationale
+       - `specs/_meta/constitution.md` for project rules and constraints
+    2. **Security**: Flag any hardcoded keys or unsafe `Coinbase AgentKit` patterns.
+    3. **Pattern Enforcement**: Ensure the Hierarchical Swarm (Planner, Worker, Judge) logic is followed.
+    4. **SDD Validation**: Ensure every new file or significant change includes a 'Plan-First' comment block referencing the relevant spec file.

@@ -1,0 +1,31 @@
+name: Chimera Governor CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v1
+        with:
+          python-version: '3.11'
+
+      - name: Build Docker image
+        run: make setup
+
+        - name: Lint
+          run: make lint
+
+        - name: Security Scan
+          run: make secure
+
+        - name: Run test suite
+          run: make test
