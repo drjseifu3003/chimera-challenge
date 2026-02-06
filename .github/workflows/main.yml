@@ -27,6 +27,8 @@ jobs:
 
       - name: Install dev dependencies
         run: uv sync --dev
+      - name: Ensure lint tools are installed
+        run: uv pip install ruff bandit
 
       - name: Lint
         run: make lint
